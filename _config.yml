@@ -4,12 +4,12 @@
 # ---------------------------------------------------------------
 
 # Site
-title: test
-subtitle: aaaa
+title: 아티초크의 조용한 작업공간
+subtitle:
 description:
-author: John Doe
+author: atrichoke42
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: ko
 date_format: '%Y-%m-%d'
 
 # URL
