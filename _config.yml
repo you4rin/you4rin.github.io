@@ -4,18 +4,19 @@
 # ---------------------------------------------------------------
 
 # Site
-title: test
+title: 아티초크의 조용한 작업공간
 subtitle:
 description:
-author: atrichoke42
+author: John Doe
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
 date_format: '%Y-%m-%d'
+remote_theme: Simpleyyt/jekyll-theme-next
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
-url:
-baseurl:
+url: "https://you4rin.github.io"
+baseurl: ""
 permalink: pretty
 
 # Pagination
