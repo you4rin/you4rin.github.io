@@ -18,7 +18,6 @@ remote_theme: Simpleyyt/jekyll-theme-next
 url: "https://you4rin.github.io"
 baseurl: "/"
 permalink: pretty
-image: https://avatars3.githubusercontent.com/you4rin?s=460&u=5f07ac108384e9a63e14269828aaa7a27fa84647&v=4
 
 # Pagination
 paginate: 10
