@@ -7,7 +7,7 @@
 title: 아티초크의 조용한 작업공간
 subtitle:
 description:
-author: John Doe
+author: 아티초크
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
 date_format: '%Y-%m-%d'
@@ -16,7 +16,7 @@ remote_theme: Simpleyyt/jekyll-theme-next
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url: "https://you4rin.github.io"
-baseurl: ""
+baseurl: "/"
 permalink: pretty
 
 # Pagination
@@ -234,7 +234,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar: https://avatars3.githubusercontent.com/you4rin?s=460&u=5f07ac108384e9a63e14269828aaa7a27fa84647&v=4
 
 
 # Table Of Contents in the Sidebar
@@ -347,7 +347,7 @@ post_copyright:
 #   image: url-of-image   - Images's url
 custom_logo:
   enabled: false
-  image:
+  image: 
 
 
 # Code Highlight theme
