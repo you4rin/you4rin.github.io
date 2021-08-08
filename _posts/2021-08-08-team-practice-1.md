@@ -1,5 +1,5 @@
 ---
-title: [팀연습] SNUPC 2019 div 1 후기
+title: "[팀연습] SNUPC 2019 div 1 후기"
 categories:
  - 팀연습
 tags:
