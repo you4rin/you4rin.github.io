@@ -3,6 +3,8 @@ title: solved.ac Ruby V 달성
 categories:
  - 잡담
 tags:
+ - solved.ac
+ - PS
 ---
 
 ![github](https://user-images.githubusercontent.com/51073213/128148796-8dae22c8-1c54-4eae-b462-bb64428e03c8.png)
