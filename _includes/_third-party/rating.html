@@ -2,7 +2,7 @@
   {% if site.rating.enable and page.layout == 'post' %}
     <script type="text/javascript">
     wpac_init = window.wpac_init || [];
-    wpac_init.push({widget: 'Rating', id: {{ site.rating.id }},
+    wpac_init.push({widget: 'Rating', id: '{{ site.rating.id }}',
       el: 'wpac-rating',
       color: '{{ site.rating.color }}'
     });
