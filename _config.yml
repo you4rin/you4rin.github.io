@@ -379,7 +379,7 @@ han: false
 #duoshuo_shortname:
 
 # Disqus
-disqus:
+disqus: true
   enable: false
   shortname: you4rin
   count: true
