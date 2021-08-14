@@ -17,12 +17,12 @@ var calId           = _n('{{ site.calendar.calendar_id  }}')                ;
 var apiKey          = _n('{{ site.calendar.api_key      }}')                ;
 var orderBy         = _n('{{ site.calendar.ordarBy      }}')  || 'startTime';
 var showLocation    = _n('{{ site.calendar.showLocation }}')  || 'false'    ;
-var offsetMax       = _n('{{ site.calendar.offsetMax    }}')  || 72         ;
-var offsetMin       = _n('{{ site.calendar.offsetMin    }}')  || 4          ;
-var timeZone        = _n('{{ site.calendar.timeZone     }}')  || void 0     ;
-var showDeleted     = _n('{{ site.calendar.showDeleted  }}')  || 'false'    ;
-var singleEvents    = _n('{{ site.calendar.singleEvents }}')  || 'true'     ;
-var maxResults      = _n('{{ site.calendar.maxResults   }}')  || '250'      ;
+var offsetMax       = _n( {{ site.calendar.offsetMax    }} )  || 72         ;
+var offsetMin       = _n( {{ site.calendar.offsetMin    }} )  || 4          ;
+var timeZone        = _n( {{ site.calendar.timeZone     }} )  || void 0     ;
+var showDeleted     = _n( {{ site.calendar.showDeleted  }} )  || 'false'    ;
+var singleEvents    = _n( {{ site.calendar.singleEvents }} )  || 'true'     ;
+var maxResults      = _n( {{ site.calendar.maxResults   }} )  || '250'      ;
 
 timeMax.setHours(now.getHours() + offsetMax);
 timeMin.setHours(now.getHours() - offsetMin);
