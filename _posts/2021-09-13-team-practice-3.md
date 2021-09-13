@@ -34,7 +34,7 @@ tags:
 
 　디버깅은 생각보다 금방 끝났는데, scanf 인자에 &를 안 붙인 것이 문제였습니다. ~~???: 이럴 거면 C++쓰세요!~~ kyaryunha가 F 코딩하다 막혔는지 PC를 다시 저에게 넘겼고, D 코드를 고치고 예제가 잘 나오는 것까지 확인하고 냈는데, 1번 TC에서부터 시간이 오래 걸리길래 일단 A 코드의 오류를 찾은 jame0313님에게 PC를 넘겼습니다. 
 
-　jame0313님은 A 코드를 금방 고쳐서 **<font color='#009874'>AC</font>**를 받았고, 얼마 안지나 제 D코드가 <font color='fa7268'>ILE</font>(Idleness Limit Exceeded)가 난 것을 확인했습니다. printf는 "\n" 출력하면 flush를 알아서 하는 줄 알았는데, 아니었던 모양입니다. 그래서 코드에 fflush(stdout)을 넣고 제출해봤는데 이번엔 <font color='#5f4b8b'>RTE</font>를 받았습니다. 쿼리 횟수 초과인가? 싶었는데 알고보니 범위를 벗어난 x, y좌표 때문이었고, 이 부분을 고치고 D도 AC를 받았습니다.
+　jame0313님은 A 코드를 금방 고쳐서 **<font color='#009874'>AC</font>**를 받았고, 얼마 안지나 제 D코드가 <font color='fa7268'>ILE</font>(Idleness Limit Exceeded)가 난 것을 확인했습니다. printf는 "\n" 출력하면 flush를 알아서 하는 줄 알았는데, 아니었던 모양입니다. 그래서 코드에 fflush(stdout)을 넣고 제출해봤는데 이번엔 <font color='#5f4b8b'>RTE</font>를 받았습니다. 쿼리 횟수 초과인가? 싶었는데 알고보니 범위를 벗어난 x, y좌표 때문이었고, 이 부분을 고치고 D도 **<font color='#009874'>AC</font>**를 받았습니다.
 
 　**A solved** (by artichoke42 & jame0313, 82min, 제출 3회)  
 　**D solved** (by artichoke42, 89min, 제출 3회)
