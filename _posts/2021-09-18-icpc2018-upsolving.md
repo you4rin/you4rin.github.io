@@ -26,27 +26,27 @@ tags:
 using namespace std;
 
 int main(){
-	fastio();
-	int n;
-	string s;
-	for(cin>>n;n--;){
-		cin>>s;
-		if(s[s.size()-1]=='a')s=s.substr(0,s.size()-1)+"as";
-		else if(s[s.size()-1]=='i'||s[s.size()-1]=='y')
+    fastio();
+    int n;
+    string s;
+    for(cin>>n;n--;){
+        cin>>s;
+        if(s[s.size()-1]=='a')s=s.substr(0,s.size()-1)+"as";
+        else if(s[s.size()-1]=='i'||s[s.size()-1]=='y')
 			s=s.substr(0,s.size()-1)+"ios";
-		else if(s[s.size()-1]=='l')s=s.substr(0,s.size()-1)+"les";
-		else if(s[s.size()-1]=='n')s=s.substr(0,s.size()-1)+"anes";
-		else if(s.size()>1&&s[s.size()-2]=='n'&&s[s.size()-1]=='e')
+        else if(s[s.size()-1]=='l')s=s.substr(0,s.size()-1)+"les";
+        else if(s[s.size()-1]=='n')s=s.substr(0,s.size()-1)+"anes";
+        else if(s.size()>1&&s[s.size()-2]=='n'&&s[s.size()-1]=='e')
 			s=s.substr(0,s.size()-2)+"anes";
-		else if(s[s.size()-1]=='o')s=s.substr(0,s.size()-1)+"os";
-		else if(s[s.size()-1]=='r')s=s.substr(0,s.size()-1)+"res";
-		else if(s[s.size()-1]=='t')s=s.substr(0,s.size()-1)+"tas";
-		else if(s[s.size()-1]=='u')s=s.substr(0,s.size()-1)+"us";
-		else if(s[s.size()-1]=='v')s=s.substr(0,s.size()-1)+"ves";
-		else if(s[s.size()-1]=='w')s=s.substr(0,s.size()-1)+"was";
-		else s+="us";
-		cout<<s<<"\n";
-	}
+        else if(s[s.size()-1]=='o')s=s.substr(0,s.size()-1)+"os";
+        else if(s[s.size()-1]=='r')s=s.substr(0,s.size()-1)+"res";
+        else if(s[s.size()-1]=='t')s=s.substr(0,s.size()-1)+"tas";
+        else if(s[s.size()-1]=='u')s=s.substr(0,s.size()-1)+"us";
+        else if(s[s.size()-1]=='v')s=s.substr(0,s.size()-1)+"ves";
+        else if(s[s.size()-1]=='w')s=s.substr(0,s.size()-1)+"was";
+        else s+="us";
+        cout<<s<<"\n";
+    }
 }
 
 ```
@@ -71,8 +71,8 @@ int main(){
 - 닫는 괄호: 바로 앞에 연산자나, 여는 괄호가 있거나, 첫 번째 문자가 닫는 괄호인 경우
 
 　그리고 추가로, 짝이 맞지 않는 괄호 문자열이 있을 경우(여는 괄호와 짝이 맞는 닫는 괄호가 없거나, 닫는 괄호와 짝이 맞는 여는 괄호가 없는 경우) error 처리를 해야 하는데, 이는 후술하도록 하겠습니다.
-　
-　
+　  
+　  
 
 　이제 주어진 문자열이 proper한지 여부를 판별해 봅시다.
 
@@ -103,69 +103,69 @@ using namespace std;
 stack<char> stk;
 
 int main(){
-	fastio();
-	string s,t="";
-	bool proper=true;
-	int lcnt=0,rcnt=0;
-	getline(cin,s);
-	for(auto i:s){
-		if(i==' ')continue;
-		if(i=='('||i==')')t+=i;
-		else if(i>='a'&&i<='z')t+="a";
-		else t+="+";
-	}
-	s=t;
-	for(auto i:s){
-		if(i=='('){
-			if(stk.size()&&(stk.top()=='a'||stk.top()==')')){
-				cout<<"error";
-				return 0;
-			}
-			stk.push(i);
-			++lcnt;
-			continue;
-		}
-		if(i=='a'){
-			if(stk.size()&&(stk.top()=='a'||stk.top()==')')){
-				cout<<"error";
-				return 0;
-			}
-			stk.push(i);
-			continue;
-		}
-		if(i=='+'){
-			if((stk.size()&&(stk.top()=='+'||stk.top()=='('))||stk.empty()){
-				cout<<"error";
-				return 0;
-			}
-			stk.push(i);
-			continue;
-		}
+    fastio();
+    string s,t="";
+    bool proper=true;
+    int lcnt=0,rcnt=0;
+    getline(cin,s);
+    for(auto i:s){
+        if(i==' ')continue;
+        if(i=='('||i==')')t+=i;
+        else if(i>='a'&&i<='z')t+="a";
+        else t+="+";
+    }
+    s=t;
+    for(auto i:s){
+        if(i=='('){
+            if(stk.size()&&(stk.top()=='a'||stk.top()==')')){
+                cout<<"error";
+                return 0;
+            }
+            stk.push(i);
+            ++lcnt;
+            continue;
+        }
+        if(i=='a'){
+            if(stk.size()&&(stk.top()=='a'||stk.top()==')')){
+                cout<<"error";
+                return 0;
+            }
+            stk.push(i);
+            continue;
+        }
+        if(i=='+'){
+            if((stk.size()&&(stk.top()=='+'||stk.top()=='('))||stk.empty()){
+                cout<<"error";
+                return 0;
+            }
+            stk.push(i);
+            continue;
+        }
 		if(stk.size()&&(stk.top()=='+'||stk.top()=='(')){
-			cout<<"error";
-			return 0;
-		}
-		int cnt=0;
-		++rcnt;
-		while(1){
-			if(stk.empty()){
-				cout<<"error";
-				return 0;
-			}
-			char c=stk.top();
-			stk.pop();
-			++cnt;
-			if(c=='(')break;
-		}
-		if(cnt!=4)proper=false;
-		stk.push('a');
+            cout<<"error";
+            return 0;
+        }
+        int cnt=0;
+        ++rcnt;
+        while(1){
+            if(stk.empty()){
+                cout<<"error";
+                return 0;
+            }
+            char c=stk.top();
+            stk.pop();
+            ++cnt;
+            if(c=='(')break;
+        }
+        if(cnt!=4)proper=false;
+        stk.push('a');
 	}
-	if(lcnt!=rcnt||(stk.size()&&stk.top()=='+')){
-		cout<<"error";
-		return 0;
+    if(lcnt!=rcnt||(stk.size()&&stk.top()=='+')){
+        cout<<"error";
+        return 0;
 	}
-	if(stk.size()!=3&&t.size()!=1)proper=false;
-	cout<<(proper?"proper":"improper");
+    if(stk.size()!=3&&t.size()!=1)proper=false;
+    cout<<(proper?"proper":"improper");
 }
 
 ```
@@ -199,47 +199,47 @@ vector<int> ans[2010];
 priority_queue<pii> pq;
 
 int main(){
-	int m,n,w,h;
-	scanf("%d %d %d %d",&m,&n,&w,&h);
-	for(int i=0;i<m;++i)scanf("%d",arr+i);
-	for(int i=0;i<n;++i)scanf("%d",cnt+i);
-	for(int i=0;i<m;++i)in[0].push_back(i);
-	for(int i=0;i<n;++i){
-		for(auto j:in[i])pq.push({arr[j],j});
-		while(cnt[i]){
-			if(pq.empty()){
-				printf("-1");
-				return 0;
-			}
-			int idx=pq.top().second;
-			pq.pop();
-			arr[idx]-=w;
-			if(arr[idx]<0){
-				printf("-1");
-				return 0;
-			}
-			for(int j=i;j<i+w;++j){
-				--cnt[j];
-				if(cnt[j]<0){
-					printf("-1");
-					return 0;
-				}
-			}
-			ans[idx].push_back(i);
-			in[i+w+h].push_back(idx);
-		}
+    int m,n,w,h;
+    scanf("%d %d %d %d",&m,&n,&w,&h);
+    for(int i=0;i<m;++i)scanf("%d",arr+i);
+    for(int i=0;i<n;++i)scanf("%d",cnt+i);
+    for(int i=0;i<m;++i)in[0].push_back(i);
+    for(int i=0;i<n;++i){
+        for(auto j:in[i])pq.push({arr[j],j});
+        while(cnt[i]){
+            if(pq.empty()){
+                printf("-1");
+                return 0;
+            }
+            int idx=pq.top().second;
+            pq.pop();
+            arr[idx]-=w;
+            if(arr[idx]<0){
+                printf("-1");
+                return 0;
+            }
+            for(int j=i;j<i+w;++j){
+                --cnt[j];
+                if(cnt[j]<0){
+                    printf("-1");
+                    return 0;
+                }
+            }
+            ans[idx].push_back(i);
+            in[i+w+h].push_back(idx);
+        }
 	}
-	for(int i=0;i<m;++i){
-		if(arr[i]){
-			printf("-1");
-			return 0;
-		}
-	}
-	printf("1\n");
-	for(int i=0;i<m;++i){
-		for(auto j:ans[i])printf("%d ",j+1);
-		printf("\n");
-	}
+    for(int i=0;i<m;++i){
+        if(arr[i]){
+            printf("-1");
+            return 0;
+        }
+    }
+    printf("1\n");
+    for(int i=0;i<m;++i){
+        for(auto j:ans[i])printf("%d ",j+1);
+        printf("\n");
+    }
 }
 
 ```
@@ -276,7 +276,7 @@ using pii=pair<int,int>;
 using info=pair<int,pii>;
 
 struct Node{
-	int s,e,lazy,M;
+    int s,e,lazy,M;
 };
 
 pii arr[100010];
@@ -285,59 +285,59 @@ priority_queue<info,vector<info>,greater<>> pq;
 Node seg[N<<1];
 
 void lazy(int pos){
-	if(cur.s!=cur.e){
-		for(auto i:{pos*2,pos*2+1}){
-			seg[i].lazy+=cur.lazy;
-			seg[i].M+=cur.lazy;
-		}
-		cur.lazy=0;
-	}
+    if(cur.s!=cur.e){
+        for(auto i:{pos*2,pos*2+1}){
+            seg[i].lazy+=cur.lazy;
+            eg[i].M+=cur.lazy;
+        }
+        cur.lazy=0;
+    }
 }
 
 void update(int pos,int s,int e,int val){
-	lazy(pos);
-	if(cur.s>e||s>cur.e)return;
-	if(cur.s>=s&&e>=cur.e){
-		cur.lazy+=val;
-		cur.M+=val;
-		lazy(pos);
-		return;
-	}
-	update(pos*2,s,e,val);
-	update(pos*2+1,s,e,val);
-	cur.M=max(left.M,right.M);
+    lazy(pos);
+    if(cur.s>e||s>cur.e)return;
+    if(cur.s>=s&&e>=cur.e){
+        cur.lazy+=val;
+        cur.M+=val;
+        lazy(pos);
+        return;
+    }
+    update(pos*2,s,e,val);
+    update(pos*2+1,s,e,val);
+    cur.M=max(left.M,right.M);
 }
 
 int main(){
-	int n,ans=0,cnt=0;
-	scanf("%d",&n);
-	for(int i=0;i<n;++i){
-		scanf("%*d %d %*d %d",&arr[i].y,&arr[i].x);
-		v.push_back(arr[i].x);
-		v.push_back(arr[i].y);
+    int n,ans=0,cnt=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;++i){
+        scanf("%*d %d %*d %d",&arr[i].y,&arr[i].x);
+        v.push_back(arr[i].x);
+        v.push_back(arr[i].y);
 	}
-	sort(v.begin(),v.end());
-	v.erase(unique(v.begin(),v.end()),v.end());
-	for(int pos=N;pos<2*N;++pos)cur.s=cur.e=pos-N;
-	for(int pos=N-1;pos;--pos)cur.s=left.s,cur.e=right.e;
-	for(int i=0;i<n;++i){
-		arr[i].x=lower_bound(v.begin(),v.end(),arr[i].x)-v.begin();
-		arr[i].y=lower_bound(v.begin(),v.end(),arr[i].y)-v.begin();
-		pq.push({arr[i].x,{i,-1}});
-		pq.push({arr[i].y+1,{i,1}});
-		update(1,arr[i].x,arr[i].y,1);
-	}
-	for(int i=0;i<200000;++i){
-		if(pq.empty())break;
-		while(pq.size()&&pq.top().x==i){
-			int idx=pq.top().y.x,val=pq.top().y.y;
-			pq.pop();
-			val==1?--cnt:++cnt;
-			update(1,arr[idx].x,arr[idx].y,val);
-		}
-		ans=max(ans,cnt+seg[1].M);
-	}
-	printf("%d",ans);
+    sort(v.begin(),v.end());
+    v.erase(unique(v.begin(),v.end()),v.end());
+    for(int pos=N;pos<2*N;++pos)cur.s=cur.e=pos-N;
+    for(int pos=N-1;pos;--pos)cur.s=left.s,cur.e=right.e;
+    for(int i=0;i<n;++i){
+        arr[i].x=lower_bound(v.begin(),v.end(),arr[i].x)-v.begin();
+        arr[i].y=lower_bound(v.begin(),v.end(),arr[i].y)-v.begin();
+        pq.push({arr[i].x,{i,-1}});
+        pq.push({arr[i].y+1,{i,1}});
+        update(1,arr[i].x,arr[i].y,1);
+    }
+    for(int i=0;i<200000;++i){
+        if(pq.empty())break;
+        while(pq.size()&&pq.top().x==i){
+            int idx=pq.top().y.x,val=pq.top().y.y;
+            pq.pop();
+            val==1?--cnt:++cnt;
+            update(1,arr[idx].x,arr[idx].y,val);
+        }
+        ans=max(ans,cnt+seg[1].M);
+    }
+    printf("%d",ans);
 }
 
 ```
@@ -367,8 +367,8 @@ int main(){
 using namespace std;
 
 struct Node{
-	int visit,comp,val;
-	vector<int> v;
+    int visit,comp,val;
+    vector<int> v;
 };
 
 int k,n,cnt;
@@ -377,79 +377,79 @@ vector<vector<int>> scc;
 stack<int> stk;
 
 int dfs(int idx){
-	arr[idx].visit=++cnt;
-	int ret=arr[idx].visit;
-	stk.push(idx);
-	for(auto i:arr[idx].v){
-		if(!arr[i].visit)ret=min(ret,dfs(i));
-		else if(!arr[i].comp)ret=min(ret,arr[i].visit);
-	}
-	if(arr[idx].visit==ret){
-		vector<int> tmp;
-		while(1){
-			int t=stk.top();
-			stk.pop();
-			arr[t].comp=scc.size()+1;
-			tmp.push_back(t);
-			if(t==idx)break;
-		}
-		scc.push_back(tmp);
-	}
-	return ret;
+    arr[idx].visit=++cnt;
+    int ret=arr[idx].visit;
+    stk.push(idx);
+    for(auto i:arr[idx].v){
+        if(!arr[i].visit)ret=min(ret,dfs(i));
+        else if(!arr[i].comp)ret=min(ret,arr[i].visit);
+    }
+    if(arr[idx].visit==ret){
+        vector<int> tmp;
+        while(1){
+            int t=stk.top();
+            stk.pop();
+            arr[t].comp=scc.size()+1;
+            tmp.push_back(t);
+            if(t==idx)break;
+        }
+        scc.push_back(tmp);
+    }
+    return ret;
 }
 
 void find_scc(int n){
-	for(int i=1;i<=n;++i)if(!arr[i].visit)dfs(i);
+    for(int i=1;i<=n;++i)if(!arr[i].visit)dfs(i);
 }
 
 int op(int x){return x>n?x-n:x+n;}
 
 void add_edge(int x,int y){
-	if(x<0)x=-x+n;
-	if(y<0)y=-y+n;
-	arr[x].v.push_back(y);
-	arr[op(y)].v.push_back(op(x));
+    if(x<0)x=-x+n;
+    if(y<0)y=-y+n;
+    arr[x].v.push_back(y);
+    arr[op(y)].v.push_back(op(x));
 }
 
 bool solve(){
-	find_scc(n<<1);
-	for(int i=1;i<=n;++i)if(arr[i].comp==arr[op(i)].comp)return 0;
-	for(int i=scc.size()-1;i>=0;--i){
-		bool flag=false;
-		for(auto j:scc[i]){
-			if(arr[j].val){
-				flag=true;
-				break;
-			}
-		}
-		for(auto j:scc[i]){
-			arr[j].val=flag;
-			arr[op(j)].val=!flag;
-		}
-	}
-	return 1;
+    find_scc(n<<1);
+    for(int i=1;i<=n;++i)if(arr[i].comp==arr[op(i)].comp)return 0;
+    for(int i=scc.size()-1;i>=0;--i){
+        bool flag=false;
+        for(auto j:scc[i]){
+            if(arr[j].val){
+                flag=true;
+                break;
+            }
+        }
+        for(auto j:scc[i]){
+            arr[j].val=flag;
+            arr[op(j)].val=!flag;
+        }
+    }
+    return 1;
 }
 
 int main(){
-	int a,b,c;
-	char ch;
-	scanf("%d %d",&n,&k);
-	for(int i=0;i<k;++i){
-		scanf("%d %c",&a,&ch);
-		if(ch=='B')a=-a;
-		scanf("%d %c",&b,&ch);
-		if(ch=='B')b=-b;
-		scanf("%d %c",&c,&ch);
-		if(ch=='B')c=-c;
-		add_edge(-a,b);
-		add_edge(-a,c);
-		add_edge(-b,c);
-	}
-	if(!solve()){
-		printf("-1");
-		return 0;
-	}
-	for(int i=1;i<=n;++i)printf(arr[i].val?"R":"B");
+    int a,b,c;
+    char ch;
+    scanf("%d %d",&n,&k);
+    for(int i=0;i<k;++i){
+        scanf("%d %c",&a,&ch);
+        if(ch=='B')a=-a;
+        scanf("%d %c",&b,&ch);
+        if(ch=='B')b=-b;
+        scanf("%d %c",&c,&ch);
+        if(ch=='B')c=-c;
+        add_edge(-a,b);
+        add_edge(-a,c);
+        add_edge(-b,c);
+    }
+    if(!solve()){
+        printf("-1");
+        return 0;
+    }
+    for(int i=1;i<=n;++i)printf(arr[i].val?"R":"B");
 }
 
 ```
