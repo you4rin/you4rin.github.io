@@ -1,9 +1,9 @@
 ---
-title: "[업솔빙] ICPC 2018 풀이 pt.1"
+title: "[업솔빙] ICPC 2018 풀이 Part 1"
 categories:
  - boj
 tags:
- - NWERC 2020
+ - ICPC 2018
  - PS
  - CP
  - BOJ
