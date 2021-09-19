@@ -24,7 +24,7 @@ tags:
 　입력으로 주어진 문자열의 끝부분을 제공된 표에 따라 변형하면 되는 단순 **구현**문제입니다. 코드는 다음과 같습니다. ~~더럽습니다.~~
 
 <details markdown="1">
-<summary>코드</summary>
+<summary>　<U>코드</U></summary>
 
 ```c++
 #include<iostream>
@@ -99,7 +99,7 @@ int main(){
 　괄호 문자열 처리가 끝난 후에도 여는 괄호가 남아있거나, 연산자로 끝나는 경우에는 error, 이전에 improper하다고 판명되었거나, 알파벳이 3개 이상 남아있는 경우에는 improper, 나머지 경우는 proper를 출력하면 됩니다. 다만 여기서 주의해야 할 것이, 괄호 문자열의 경우와 달리, 알파벳이 정확히 1개 있는 경우에도 proper를 출력해야 한다는 점입니다. (a)와 달리 a는 proper한 문자열이니까요.
 
 <details markdown="1">
-<summary>코드</summary>
+<summary>　<U>코드</U></summary>
 
 　코드의 간결함을 위해, 모든 알파벳을 알파벳 a로, 모든 연산자를 연산자 +로 치환하여 풀었으니, 이 부분 참고 바랍니다.
 
@@ -199,7 +199,7 @@ int main(){
 　1일부터 n일까지에 대해 1~4 과정을 반복한 후에 \\( w_i \\)와 \\( d_j \\) 중 0이 아닌 값이 하나라도 있다면 -1을, 아니라면 각 사람이 일하는 날짜를 출력하면 \\( O(n \log m ) \\)에 문제를 해결할 수 있습니다.
 
 <details markdown="1">
-<summary>코드</summary>
+<summary>　<U>코드</U></summary>
 
 ```c++
 #include<cstdio>
@@ -279,7 +279,7 @@ int main(){
 　이렇게 되면 업데이트 n번, 쿼리 2n번을 수행하기 때문에, \\( O(n \log n ) \\)에 문제를 해결할 수 있습니다.
 
 <details markdown="1">
-<summary>코드</summary>
+<summary>　<U>코드</U></summary>
 
 ```c++
 #include<cstdio>
@@ -383,7 +383,7 @@ int main(){
 　n명의 참가자에 대해 위의 6가지 조건을 모두 추가하고, **2-SAT**을 돌리면 \\( O(n) \\)에 문제를 해결할 수 있습니다.
 
 <details markdown="1">
-<summary>코드</summary>
+<summary>　<U>코드</U></summary>
 
 ```c++
 #include<cstdio>
