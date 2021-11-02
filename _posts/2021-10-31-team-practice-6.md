@@ -25,7 +25,7 @@ tags:
 
 　jame0313님이 구현한 B번은 예제가 잘 나와서 제출해봤지만, <font color='#dd4124'>WA</font>가 떠서 제게 노트북을 넘겨줬고, 저는 구체화한 J번 풀이 구현을 시작했습니다..만 도중에 jame0313님이 다시 제 노트북을 뺏어서 B번을 고쳐서 제출했고, 이번엔 **<font color='#009874'>AC</font>**를 받았습니다. J번은 도중에 문제 해석 관련 이슈가 있긴 했지만 그래도 금방 구현했고, 이 문제도 얼마 안지나 **<font color='#009874'>AC</font>**를 받았습니다. 
 
-　**B solved** (by jame0313, 63min, 제출 2회)
+　**B solved** (by jame0313, 63min, 제출 2회)  
 　**J solved** (by artichoke42, 72min, 제출 1회)
 <hr/>
 
